@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>#hashtags4U</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>#tags4insta</h1>
+  <p>Find hashtags posted with your hashtag, get more audience!</p> 
+</div>
+
+
+
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    
+    <div class="col-sm-7">
+      <h2>Search</h2>
+      <h6>Please type in your hashtag</h6>
+      <form action="/" method="POST">
+  <div class="form-group">
+    
+    <input type="text" class="form-control" id="text" name= "tag">
+  <p></p>
+  <button id="btn1" type="submit" class="btn btn-primary">#search</button>
+</form>
+      
+      <br>
+      
+      <p>The hashtags appearing in the same post with your hashtags are displayed below:</p>
+
+  <div class="list-group">
+    <div style="width: auto; height: 350px; overflow-y: scroll; overflow-x: hidden">
+  {% for item in tagslist %}
+
+   <a href="#" class="list-group-item list-group-item-action"  onClick="myFunction('{{item[0] }}')">{{item[0] }}</a>
+  {% endfor %}
+</div>
+  </div>
+    
+    
+  </div>
+</div>
+  <div class="col-sm-5">
+      <h2>Selected Hashtags</h2>
+      <textarea class="form-control" rows="17" id="comment"></textarea>
+      <p></p>
+      <button class="btn btn-primary" onClick="document.getElementById('comment').value=''">#Clear </button>
+      <p></p>
+
+    </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>App coming soon!</p>
+</body>
+<script>
+function myFunction(p) {
+    if (document.getElementById("comment").value== ''){
+      document.getElementById("comment").value=p;
+  } else if (document.getElementById("comment").value.indexOf(p)<0) {
+      document.getElementById("comment").value= document.getElementById("comment").value+', '+p;
+  }
+}
+
+
+</script>
+
+</html>
