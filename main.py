@@ -8,10 +8,10 @@ import json
 
 app = Flask(__name__)
 
-consumer_key= 'RcNjffhjgsMb7zbC8xt0YzxBO'
-consumer_secret= 'o5N6pblbpMXY5I2Xyr9DwafU7tEdT8emkFdYXsoDg2OlCS9p4n'
-access_token= '23436854-O6yEOHmjk9bPITfS65vUVuLITSXv9bnbkPA7EBEV3'
-access_token_secret= 'zomrcG2Y0q59Dl5fTfZIIVAziyePQktmyvrFFyUCKTJ1j'
+consumer_key= 'KEY' #replace KEY with your key
+consumer_secret= 'consumer secret' #replace comsumer secret with your consumer secret
+access_token= 'access token' #replace with your access token.
+access_token_secret= 'access token secret' #replace with your access token secret.
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
